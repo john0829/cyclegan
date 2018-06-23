@@ -4,6 +4,8 @@ from flask import request
 from flask import Response
 from flask import send_from_directory
 from flask_cors import CORS
+from Align import Align
+from OpencvAlign import OpencvAlign
 import logging
 import json
 import urllib3
@@ -31,7 +33,7 @@ def becomeAnimeStyle():
     img = data['file'].split(",")[1]
     img = base64.decodebytes(bytes(img, 'utf-8'))
     with open("imageToSave.png", "wb") as fh:
-      fh.write(img)
+        fh.write(img)
     changeStyle.changeToAnime("imageToSave.png")
 
     with open("outfileAnime.jpg", "rb") as image_file:
@@ -43,11 +45,17 @@ def realTimeBecomeAnimeStyle():
     data = request.form
     img = data['file']
     img = base64.decodebytes(bytes(img, 'utf-8'))
-    with open("realTimeAnime.png", "wb") as fh:
-      fh.write(img)
-    changeStyle.changeToAnime("realTimeAnime.png")
+    with open("cameraToSave.png", "wb") as fh:
+        fh.write(img)
 
-    with open("realTimeAnime.jpg", "rb") as image_file:
+    #align = Align()
+    #align.align('cameraToSave.png')
+    align = OpencvAlign('cameraToSave.png')
+    align.Cut()
+
+    changeStyle.changeToAnime("./out/cameraToSave.png")
+
+    with open("outfileCamera.jpg", "rb") as image_file:
         encoded_string = base64.b64encode(image_file.read())
     return Response(json.dumps(str(encoded_string)), mimetype='application/json')
 
@@ -58,7 +66,7 @@ def becomeRealStyle():
     img = data['file'].split(",")[1]
     img = base64.decodebytes(bytes(img, 'utf-8'))
     with open("imageToSave.png", "wb") as fh:
-      fh.write(img)
+        fh.write(img)
     changeStyle.chamgeToReal("imageToSave.png")
 
     with open("outfileReal.jpg", "rb") as image_file:

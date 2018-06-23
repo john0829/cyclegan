@@ -33,10 +33,10 @@ class ChangeStyle():
     self.modelGBA.add(self.GBA)
     self.modelGBA.summary()
 
-    self.modelGAB.load_weights('./model/n-GAB-3.h5')
+    self.modelGAB.load_weights('./model/n-GAB-4.h5')
     global graphGAB
     graphGAB = tf.get_default_graph()
-    self.modelGBA.load_weights('./model/n-GBA-3.h5')
+    self.modelGBA.load_weights('./model/n-GBA-4.h5')
     global graphGBA
     graphGBA = tf.get_default_graph()
 
@@ -50,7 +50,8 @@ class ChangeStyle():
       if(img_path == "imageToSave.png"):
         Y = self.modelGBA.predict(np.asarray(X))
       else:
-        Y = self.modelGBA.predict(np.asarray(X)[:,:,:,:-1])
+        print(np.asarray(X).shape)
+        Y = self.modelGBA.predict(np.asarray(X))
     end = time.time()
     print("spend time :" ,end-start)
 
@@ -60,7 +61,7 @@ class ChangeStyle():
     if(img_path == "imageToSave.png"):
       scipy.misc.imsave('outfileAnime.jpg', img)
     else:
-      scipy.misc.imsave('realTimeAnime.jpg', img)
+      scipy.misc.imsave('outfileCamera.jpg', img)
 
   def chamgeToReal(self,img_path):
     imglistB = []
