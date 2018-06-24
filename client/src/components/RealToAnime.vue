@@ -10,7 +10,7 @@
       </div>
       <div class="col-2"></div>
       <button class="btn btn-success col-2" @click="uploadImage()">改變成動漫風格</button>
-      <button class="btn btn-success col-1" id="downloadButton" @click="downloadImage()">下載</button>
+      <a class="btn btn-success col-1 ml-4" id="downloadButton" href="http://localhost:3000/outfileAnime.jpg" download>下載</a>
     </div>
   </div>
 </template>
@@ -109,6 +109,6 @@ img{
 }
 
 #downloadButton{
-  margin-left: 5%;
+  color: white;
 }
 </style>

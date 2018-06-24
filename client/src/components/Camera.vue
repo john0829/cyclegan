@@ -5,7 +5,7 @@
       </video>
       <img class="col-5" width="640" height="480" :src="modifiedImage">
     </div>
-    <button class="btn btn-success col-1" @click="clickChangeButton()">轉換風格</button>
+    <button class="btn btn-success col-3" @click="clickChangeButton()">轉換風格</button>
   </div>
 </template>
 
