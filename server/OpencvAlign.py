@@ -19,7 +19,8 @@ class OpencvAlign:
             minSize=(30, 30),
         )
         print ('Found {0} faces!'.format(len(self.faces)) )
-        self.Resize()
+        #self.Resize()
+        cv2.imwrite('./out/'+ self.imagePath , self.image)
 
     def Resize(self):
         for (x, y, w, h) in self.faces:
