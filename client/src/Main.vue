@@ -2,9 +2,7 @@
   <div id="main">
     <real-to-anime ref="realToAnime"></real-to-anime>
     <anime-to-real ref="animeToReal"></anime-to-real>
-    <transition name="slide-fade">
       <router-view></router-view>
-    </transition>
   </div>
 </template>
 

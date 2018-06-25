@@ -33,10 +33,10 @@ class ChangeStyle():
     self.modelGBA.add(self.GBA)
     self.modelGBA.summary()
 
-    self.modelGAB.load_weights('./model/n-GAB-4.h5')
+    self.modelGAB.load_weights('./model/n-GAB-7.h5')
     global graphGAB
     graphGAB = tf.get_default_graph()
-    self.modelGBA.load_weights('./model/n-GBA-4.h5')
+    self.modelGBA.load_weights('./model/n-GBA-7.h5')
     global graphGBA
     graphGBA = tf.get_default_graph()
 

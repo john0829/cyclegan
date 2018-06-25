@@ -23,7 +23,7 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App',
       imageData:"./static/sampleReal.jpg",
-      modifiedImage:"./static/sampleChangeAnime.jpg"
+      modifiedImage:"./static/sampleChangeAnime.jpeg"
     }
   },
   methods:{
