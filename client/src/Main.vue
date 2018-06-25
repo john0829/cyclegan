@@ -2,7 +2,9 @@
   <div id="main">
     <real-to-anime ref="realToAnime"></real-to-anime>
     <anime-to-real ref="animeToReal"></anime-to-real>
-    <router-view/>
+    <transition name="slide-fade">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -26,5 +28,19 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+
+.slide-fade-leave-active {
+  transition: all .3s cubic-bezier(1.0,0.5,0.8,1.0);
+}
+
+.slide-fade-enter-active ,.slide-fade-leave-active{
+  transform: translateX(500px);
+  opacity: 0;
 }
 </style>

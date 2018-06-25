@@ -2,7 +2,9 @@
   <div id="app">
     <button-r-outer ref="buttonRouter"></button-r-outer>
     <!-- <img src="./assets/logo.png"> -->
-    <router-view/>
+    <transition name="slide-fade">
+      <router-view/>
+    </transition>
   </div>
 </template>
 

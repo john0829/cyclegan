@@ -81,6 +81,11 @@ def SendAnimeFile():
 def SendRealFile():
     return send_from_directory(app.root_path, "outfileReal.jpg", as_attachment=True)
 
+@app.route('/outfileCamera.jpg', methods=['GET'])
+def SendCameraFile():
+    return send_from_directory(app.root_path, "outfileCamera.jpg", as_attachment=True)
+
+
 if __name__ == '__main__':
     app.run(host='localhost', debug=True, port = 3000, use_reloader=False)
 

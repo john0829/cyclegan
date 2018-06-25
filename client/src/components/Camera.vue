@@ -5,7 +5,8 @@
       </video>
       <img class="col-5" width="640" height="480" :src="modifiedImage">
     </div>
-    <button class="btn btn-success col-3" @click="clickChangeButton()">轉換風格</button>
+    <button class="btn btn-success col-2" @click="clickChangeButton()">轉換風格</button>
+    <a class="btn btn-success col-2" href="http://localhost:3000/outfileCamera.jpg" download>下載照片</a>
   </div>
 </template>
 
